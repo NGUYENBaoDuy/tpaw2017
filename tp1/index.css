@@ -1,0 +1,30 @@
+body {
+    background-color: white;
+	font-family: "Georgia";
+	font-size: big;
+}
+
+h1 {
+    color: black;
+    margin-left: 20px;
+	font-size: 2em;
+	transition: 3s;
+}
+
+h1:hover {
+	font-size: 3em;
+}
+table{
+	background-color: white;
+}
+a:visited {
+    color: green;
+}
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    text-decoration: underline;
+}
