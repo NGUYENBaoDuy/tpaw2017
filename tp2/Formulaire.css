@@ -1,0 +1,18 @@
+#error
+{
+	border-color: black;
+	background-color:red;
+	color:blue;
+}
+#resulat
+{
+	border-color: black;
+	background-color: green;
+	color:yellow;	
+}
+body{
+	background-color:gray;
+}
+table{
+	background-color:white;
+}
