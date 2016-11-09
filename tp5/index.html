@@ -1,23 +1,75 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP5</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<marquee behavior="scroll" bgcolor="yellow" loop="-1" width="30%">
+   <i>
+      <font color="blue">
+        Today's date is : 
+        <strong>
+         <span id="time"></span>
+        </strong>           
+      </font>
+   </i>
+</marquee> 
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
-    </head>
-    <body>        
-        <h1>TP5</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
-</html>
+JS
+
+var today = new Date();
+document.getElementById('time').innerHTML=today;
+ 
+api key of open weather 
+ae3e8be45d47ccd5941b17ff8f3aba94
+
+How to use API key in API call
+
+Description:
+
+To get access to weather API you need an API key whatever account you chose from Free to Enterprise.
+
+We keep right to not to process API requests without API key.
+API call:
+http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID={APIKEY}
+Parameters:
+APPID {APIKEY} is your unique API key
+Example of API call:
+api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=1111111111
+
+
+Current weather
+API call:
+
+api.openweathermap.org/data/2.5/weather?q={city name}
+
+api.openweathermap.org/data/2.5/weather?q={city name},{country code}
+
+
+var request = new XMLHttpRequest();
+request.open('GET', '/my/url', true);
+
+request.onload = function() {
+  if (request.status >= 200 && request.status < 400) {
+    // Success!
+    var resp = request.responseText;
+  } else {
+    // We reached our target server, but it returned an error
+
+  }
+};
+
+request.onerror = function() {
+  // There was a connection error of some sort
+};
+
+request.send();
+
+
+
+"coord":{"lon":2.35,"lat":48.85},
+"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],
+"base":
+"stations",
+"main":{"temp":276.48,"pressure":1007,"humidity":100,"temp_min":276.15,"temp_max":277.15},
+"visibility":10000,
+"wind":{"speed":4.1,"deg":30},
+"clouds":{"all":75},
+"dt":1478530800,
+"sys":{"type":1,"id":5615,"message":0.0025,"country":"FR","sunrise":1478501311,"sunset":1478535569},
+"id":2988507,"name":"Paris","cod":200}
+Paris 276.48 undefined
