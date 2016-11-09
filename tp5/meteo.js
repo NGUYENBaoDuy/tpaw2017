@@ -89,6 +89,7 @@ function searchLatLn(position) {
 			document.getElementById("icon").src="http://openweathermap.org/img/w/" + icon + ".png";
 			document.getElementById("map").src="http://maps.googleapis.com/maps/api/staticmap?markers=" + position.coords.latitude + "," + position.coords.longitude + "&size=500x400&zoom=7";
 			document.getElementById("country").innerHTML = name;
+			document.getElementById("city").innerHTML = name;
 			document.getElementById("temper").innerHTML = temper + "°C";
 			document.getElementById("maintemp").innerHTML = temp;
 			document.getElementById("degwind").className="wi wi-wind towards"+deg+"-deg";
