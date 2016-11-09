@@ -1,75 +1,64 @@
-<marquee behavior="scroll" bgcolor="yellow" loop="-1" width="30%">
-   <i>
-      <font color="blue">
-        Today's date is : 
-        <strong>
-         <span id="time"></span>
-        </strong>           
-      </font>
-   </i>
-</marquee> 
+<!DOCTYPE html>
+<html>
 
-JS
+<head>
+  <title>TP5 M2 3IR</title>
+  <!-- libery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="meteo.js"></script>
+</head>
 
-var today = new Date();
-document.getElementById('time').innerHTML=today;
- 
-api key of open weather 
-ae3e8be45d47ccd5941b17ff8f3aba94
+<body>
+  	<div class="container-fluid">
+		<center>
+			<h1>TP AW5: JS + Meteo WEATHER FORCASE</h1>
+		</center>
+		<hr>
+  <form id="searchCity">  
+        <div class="input-group">
+          <span class="input-group-btn">
+        <button class="btn btn-success" id="GPS" type="button">GPS</button>
+      </span>
+          <input type="search" class="form-control" id="city" required placeholder="Votre Ville, Paris, NY...">
+          <span class="input-group-btn">
+        <button id="bt1" class="btn btn-default" type="button">Recherche</button>
+		</span>
+        </div>
+  </form>
+  <div id="result"></div>
+  <div id="temperature"></div>
+  <center>
+    <h1 id="country"></h1>
+    <div id="time"></div>
+    <img id="icon" src="">
+    <div id ="maintemp"></div>
+    <div id ="temper"></div>
+    
+    <hr width="50%">
+  </center>
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-3">Humidity</div>
+    <div id="Humidity" class="col-xs-3"> </div>
+  </div>
+  <hr width="50%">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-3">Cloud</div>
+    <div id="Cloud" class="col-xs-3"> </div>
+  </div>
+  <hr width="50%">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-3">Wind</div>
+    <div id="Wind" class="col-xs-3"> </div>
+  </div>
+  <hr width="50%">
+  <center>
+    <image id="map" src="">
+  </center>
+  </div>
 
-How to use API key in API call
+</body>
 
-Description:
-
-To get access to weather API you need an API key whatever account you chose from Free to Enterprise.
-
-We keep right to not to process API requests without API key.
-API call:
-http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID={APIKEY}
-Parameters:
-APPID {APIKEY} is your unique API key
-Example of API call:
-api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=1111111111
-
-
-Current weather
-API call:
-
-api.openweathermap.org/data/2.5/weather?q={city name}
-
-api.openweathermap.org/data/2.5/weather?q={city name},{country code}
-
-
-var request = new XMLHttpRequest();
-request.open('GET', '/my/url', true);
-
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-    // Success!
-    var resp = request.responseText;
-  } else {
-    // We reached our target server, but it returned an error
-
-  }
-};
-
-request.onerror = function() {
-  // There was a connection error of some sort
-};
-
-request.send();
-
-
-
-"coord":{"lon":2.35,"lat":48.85},
-"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],
-"base":
-"stations",
-"main":{"temp":276.48,"pressure":1007,"humidity":100,"temp_min":276.15,"temp_max":277.15},
-"visibility":10000,
-"wind":{"speed":4.1,"deg":30},
-"clouds":{"all":75},
-"dt":1478530800,
-"sys":{"type":1,"id":5615,"message":0.0025,"country":"FR","sunrise":1478501311,"sunset":1478535569},
-"id":2988507,"name":"Paris","cod":200}
-Paris 276.48 undefined
+</html>
