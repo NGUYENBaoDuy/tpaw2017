@@ -25,6 +25,7 @@ function searchCity(_city) {
 			var humidity = responseJSON.main.humidity;
 			var cloud = responseJSON.clouds.all;
 			var wind = responseJSON.wind.speed;
+			var deg = responseJSON.wind.deg;
 			var name = responseJSON.name;
 			var date = new Date(responseJSON.dt * 1000);
 			var hour = date.getHours();
@@ -42,6 +43,7 @@ function searchCity(_city) {
 			document.getElementById("Humidity").innerHTML = humidity + "%";
 			document.getElementById("Cloud").innerHTML = cloud + "%";
 			document.getElementById("Wind").innerHTML = wind + "m/s/";
+			document.getElementById("degwind").className="wi wi-wind towards"+deg+"-deg";
 			document.getElementById("map").src="https://maps.googleapis.com/maps/api/staticmap?size=500x400&zoom=7&center="+name+"&markers="+name;
 
 		} else {
@@ -73,6 +75,7 @@ function searchLatLn(position) {
 			var humidity = responseJSON.main.humidity;
 			var cloud = responseJSON.clouds.all;
 			var wind = responseJSON.wind.speed;
+			var deg = responseJSON.wind.deg;
 			var name = responseJSON.name;
 			var date = new Date(responseJSON.dt * 1000);
 			var hour = date.getHours();
@@ -88,6 +91,7 @@ function searchLatLn(position) {
 			document.getElementById("country").innerHTML = name;
 			document.getElementById("temper").innerHTML = temper + "°C";
 			document.getElementById("maintemp").innerHTML = temp;
+			document.getElementById("degwind").className="wi wi-wind towards"+deg+"-deg";
 			document.getElementById("time").innerHTML = formattedTime;
 			document.getElementById("Humidity").innerHTML = humidity + "%";
 			document.getElementById("Cloud").innerHTML = cloud + "%";
