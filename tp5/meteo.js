@@ -45,6 +45,7 @@ function searchCity(_city) {
 			document.getElementById("Wind").innerHTML = wind + "m/s/";
 			document.getElementById("degwind").className="wi wi-wind towards"+deg+"-deg";
 			document.getElementById("map").src="https://maps.googleapis.com/maps/api/staticmap?size=500x400&zoom=7&center="+name+"&markers="+name;
+			document.getElementById("result").style.display="initial";
 
 		} else {
 			// console.log("** An error occurred during the transaction");
@@ -97,7 +98,7 @@ function searchLatLn(position) {
 			document.getElementById("Humidity").innerHTML = humidity + "%";
 			document.getElementById("Cloud").innerHTML = cloud + "%";
 			document.getElementById("Wind").innerHTML = wind + "m/s/";
-
+			document.getElementById("result").style.display="initial";
 
 		} else {
 			// console.log("** An error occurred during the transaction");
