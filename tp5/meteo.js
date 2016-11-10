@@ -57,7 +57,7 @@ function searchCity(_city) {
 		console.log("** An error occurred during the transaction");
 	};
 
-	request.send();
+	//request.send();
 }
 function searchLatLn(position) {
 	console.log(searchLatLn, 'Hello from' + position.coords.latitude + ',');
@@ -110,6 +110,6 @@ function searchLatLn(position) {
 		console.log("** An error occurred during the transaction");
 	};
 
-	request.send();
+	//request.send();
 
 } 
