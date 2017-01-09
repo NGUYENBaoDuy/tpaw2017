@@ -34,7 +34,7 @@ function searchCity(_city) {
 			var formattedTime = "@ " + hour + ":" + minute.substr(-2) + ":" + seconds.substr(-2);
 			/* document.getElementById("result").innerHTML = responseJSON.name + " " + responseJSON.main.temp +" K°";  */
 			//document.getElementById("temperature").innerHTML = icon + temp + humidity + cloud + wind + temper + name + formattedTime;
-			document.getElementById("icon").src="http://openweathermap.org/img/w/" + icon + ".png";
+			document.getElementById("icon").src="https://openweathermap.org/img/w/" + icon + ".png";
 			//$("#icon").attr("src", "http://openweathermap.org/img/w/" + icon + ".png");
 			document.getElementById("country").innerHTML = name;
 			document.getElementById("temper").innerHTML = temper + "°C";
