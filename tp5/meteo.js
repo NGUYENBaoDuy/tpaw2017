@@ -87,8 +87,8 @@ function searchLatLn(position) {
 			//document.getElementById("temperature").innerHTML = icon + temp + humidity + cloud + wind + temper + name + formattedTime;
 			//("icon").attr("src", "http://openweathermap.org/img/w/" + icon + ".png");
 			//('map').attr("src", "http://maps.googleapis.com/maps/api/staticmap?markers=" + position.coords.latitude + "," + position.coords.longitude + "&size=500x400&zoom=7");
-			document.getElementById("icon").src="http://openweathermap.org/img/w/" + icon + ".png";
-			document.getElementById("map").src="http://maps.googleapis.com/maps/api/staticmap?markers=" + position.coords.latitude + "," + position.coords.longitude + "&size=500x400&zoom=7";
+			document.getElementById("icon").src="https://openweathermap.org/img/w/" + icon + ".png";
+			document.getElementById("map").src="https://maps.googleapis.com/maps/api/staticmap?markers=" + position.coords.latitude + "," + position.coords.longitude + "&size=500x400&zoom=7";
 			document.getElementById("country").innerHTML = name;
 			document.getElementById("city").innerHTML = name;
 			document.getElementById("temper").innerHTML = temper + "°C";
