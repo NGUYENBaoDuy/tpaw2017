@@ -44,7 +44,7 @@ function searchCity(_city) {
 			document.getElementById("Cloud").innerHTML = cloud + "%";
 			document.getElementById("Wind").innerHTML = wind + "m/s/";
 			document.getElementById("degwind").className="wi wi-wind towards"+deg+"-deg";
-			document.getElementById("map").src="https://maps.googleapis.com/maps/api/staticmap?size=500x400&zoom=7&center="+name+"&markers="+name;
+			document.getElementById("map").src="http://maps.googleapis.com/maps/api/staticmap?size=500x400&zoom=7&center="+name+"&markers="+name;
 			document.getElementById("result").style.display="initial";
 
 		} else {
@@ -88,7 +88,7 @@ function searchLatLn(position) {
 			//("icon").attr("src", "http://openweathermap.org/img/w/" + icon + ".png");
 			//('map').attr("src", "http://maps.googleapis.com/maps/api/staticmap?markers=" + position.coords.latitude + "," + position.coords.longitude + "&size=500x400&zoom=7");
 			document.getElementById("icon").src="https://openweathermap.org/img/w/" + icon + ".png";
-			document.getElementById("map").src="https://maps.googleapis.com/maps/api/staticmap?markers=" + position.coords.latitude + "," + position.coords.longitude + "&size=500x400&zoom=7";
+			document.getElementById("map").src="http://maps.googleapis.com/maps/api/staticmap?markers=" + position.coords.latitude + "," + position.coords.longitude + "&size=500x400&zoom=7";
 			document.getElementById("country").innerHTML = name;
 			document.getElementById("city").innerHTML = name;
 			document.getElementById("temper").innerHTML = temper + "°C";
