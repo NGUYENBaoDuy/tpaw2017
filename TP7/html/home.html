@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <center>
+    <h1>TP AW7: AngularJS+ Meteo WEATHER FORCASE</h1>
+  </center>
+  <hr>
+
+  <form name="searchCity">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-success" ng-click="GPS()" type="button">GPS</button>
+      </span>
+      <input type="search" class="form-control" name="city" ng-model="city" required ng-minlength="2" ng-maxlength="20" placeholder="Votre Ville, Paris, NY...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" ng-click="recherche()" type="button" ng-disabled="!searchCity.$valid">Recherche</button>
+		</span>
+    </div>
+    <div ng-messages="searchCity.city.$error" role="alert">
+      <div ng-message="required" class="label label-danger">Veuillez saisir une ville SVP</div>
+      <div ng-message="minlength" class="label label-danger">minlength 2</div>
+      <div ng-message="maxlength" class="label label-danger">maxlength 20</div>
+    </div>
+
+  </form>
+
+  <div ​ ng-if="meteo" ​>
+    <p>{{meteo.data}}</p>
+    <center>
+      <h1>{{meteo.name}}</h1>
+      @{{meteo.date.getHours()}}:{{meteo.date.getMinutes()}}
+      <hr width="50%">
+      <img src="http://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png" /><br>
+      <h3​>{{meteo.main.temp|number:0}}°</h3><br> ​{{meteo.weather[0].description}}
+        <br>
+        <hr width="50%">
+    </center>
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-3">Humidity</div>
+      <div class="col-xs-3">{{meteo.main.humidity|number:0}}%</div>
+    </div>
+    <hr width="50%">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-3">Cloud</div>
+      <div id="Cloud" class="col-xs-3">{{meteo.clouds.all|number:0}}%</div>
+    </div>
+    <hr width="50%">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-3">Wind</div>
+      <div id="Wind" class="col-xs-1">{{meteo.wind.speed|number:0}}/m/s</div>
+      <div id="degwind" class="col-xs 1"></div>
+    </div>
+    <hr width="50%">
+    <div class="row" ng-repeat="x in forecast.list">
+      <div class="col-xs-3 col-xs-offset-3">{{x.dt_txt}}</div>
+      <div class="col-xs-3"><img src="http://openweathermap.org/img/w/{{x.weather[0].icon}}.png" /> {{x.main.temp|number:0}}°</div>
+      <div id="degwind" class="col-xs 1"></div>
+    </div>
+
+    <center>
+      <image id="map" src="http://maps.googleapis.com/maps/api/staticmap?size=500x400&zoom=10&center={{meteo.name}}&markers={{meteo.name}}">
+    </center>
+  </div>
+
+  <p ​ng-if="errorMsg ​"> ​{{errorMsg}} ​</p>
